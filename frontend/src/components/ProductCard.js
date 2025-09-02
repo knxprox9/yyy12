@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { SiVisa, SiGooglepay, SiRoblox, SiPlaystation, SiGoogleplay, SiSteam, SiAmazon, SiItunes, SiEpicgames, SiRazer } from 'react-icons/si';
 import { TbBrandFortnite } from 'react-icons/tb';
 
-import { FiTruck, FiShield, FiGift, FiX } from 'react-icons/fi';
+import { FiTruck, FiShield, FiGift, FiX, FiCreditCard } from 'react-icons/fi';
 import ToggleButton from './ToggleButton';
 
 const ProductCard = () => {
