@@ -108,7 +108,7 @@ const ProductCard = () => {
           <div className="toggle-wrapper" title="فتح الصفحة المصغرة">
             <ToggleButton active={miniOpen} onClick={() => setMiniOpen(true)} />
           </div>
-          <svg viewBox="0 0 1921 1081" xmlnsXlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" className="svg">
+          <svg viewBox="0 0 1921 1081" xmlnsXlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" className="svg" aria-hidden="true">
             <defs>
               <radialGradient gradientUnits="objectBoundingBox" gradientTransform="translate(0.219) scale(0.563 1)" r="1.204" cy="0.5" cx="0.5" id="radial-gradient">
                 <stop stopColor="#fff" offset={0} />
