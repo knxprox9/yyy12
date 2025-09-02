@@ -20,7 +20,7 @@ const ProductCard = () => {
         {miniOpen && <div className="screen-dim" onClick={() => setMiniOpen(false)} aria-hidden="true" />}
 
         {/* Floating mini page overlay (same size as the card) */}
-        {miniOpen &amp;&amp; (
+        {miniOpen && (
           <div className="mini-overlay" role="dialog" aria-modal="true" aria-label="صفحة مصغرة">
             <button className="close-btn" onClick={() => setMiniOpen(false)} aria-label="إغلاق">
               <FiX size={16} />
