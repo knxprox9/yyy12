@@ -12,7 +12,7 @@ import React, { useEffect, useRef, useState } from "react";
  *  - tolerance: number (0..255) color distance threshold, default 35
  *  - edgeFeather: number (0..2) softens edges slightly, default 0.6
  */
-const TransparentIconFrame = ({ src, size = 140, sampleTime = 1.0, tolerance = 28, edgeFeather = 0.6, className = "", renderMode = "mask" }) => {
+const TransparentIconFrame = ({ src, size = 140, sampleTime = 1.0, tolerance = 28, edgeFeather = 0.6, className = "", renderMode = "mask", silhouette = true }) => {
   const videoRef = useRef(null);
   const canvasRef = useRef(null);
   const [imgUrl, setImgUrl] = useState(null);
