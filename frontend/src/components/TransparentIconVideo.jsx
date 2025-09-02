@@ -13,7 +13,7 @@ import React, { useEffect, useRef, useState } from "react";
  *  - edgeFeather: number (px) default 0.7
  *  - bgStrategy: 'auto' | 'white' (fallback if auto fails)
  */
-const TransparentIconVideo = ({ src, size = 180, opacity = 0.98, tolerance = 42, edgeFeather = 0.6, bgStrategy = 'white' }) => {
+const TransparentIconVideo = ({ src, size = 180, opacity = 1, tolerance = 18, edgeFeather = 0.4, bgStrategy = 'white' }) => {
   const videoRef = useRef(null);
   const canvasRef = useRef(null);
   const rafRef = useRef(null);
