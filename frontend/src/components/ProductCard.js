@@ -120,13 +120,8 @@ const ProductCard = () => {
               <rect fill="url(#radial-gradient)" strokeWidth={1} strokeMiterlimit={10} stroke="#fff" transform="translate(122 93)" height={1080} width={1920} data-name="Rectangle 83" id="Rectangle_83" />
             </g>
           </svg>
-          {/* Static transparent icon extracted from video; falls back to engrave if not available */}
-          <TransparentIconFrame src="/assets/finance-anim.mp4" size={140} className="icon-image" renderMode="mask" />
-          <div className="icon-engrave" aria-hidden="true">
-            <FiCreditCard className="icon base" size={96} />
-            <FiCreditCard className="icon light" size={96} />
-            <FiCreditCard className="icon dark" size={96} />
-          </div>
+          {/* Live transparent video with bg removed */}
+          <TransparentIconVideo src="/assets/finance-anim.mp4" size={140} opacity={0.95} />
         </div>
         <label className="favorite">
           <input defaultChecked type="checkbox" />
