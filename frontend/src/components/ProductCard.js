@@ -227,7 +227,7 @@ const StyledWrapper = styled.div`
   .mini-overlay .payment-card .card-icon.real-icon svg,
   .mini-overlay .payment-card .card-icon.real-icon img { width: 22px; height: 22px; transform: scale(1.25); transform-origin: center; }
 
-  .card .image-container { position: relative; width: 100%; height: 130px; border-radius: 0.7rem; border-top-left-radius: 4rem; margin-bottom: 1rem; }
+  .card .image-container { position: relative; width: 100%; height: 130px; border-radius: 0.7rem; border-top-left-radius: 4rem; margin-bottom: 1rem; overflow: hidden; }
 
   .card .image-container .status-dot { position: absolute; top: 6px; left: 8px; width: 8px; height: 8px; border-radius: 50%; box-shadow: 0 0 0 2px #ffffff; }
   .card .image-container .status-dot.online { background: #22c55e; }
