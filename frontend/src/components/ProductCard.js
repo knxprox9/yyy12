@@ -121,7 +121,7 @@ const ProductCard = () => {
             </g>
           </svg>
           {/* Live transparent video with bg removed */}
-          <TransparentIconVideo src="/assets/finance-anim.mp4" size={140} opacity={0.95} />
+          <TransparentIconVideo src="/assets/finance-anim.mp4" size={160} opacity={0.98} tolerance={80} edgeFeather={1.2} bgStrategy={'white'} />
         </div>
         <label className="favorite">
           <input defaultChecked type="checkbox" />
