@@ -5,7 +5,7 @@ import { TbBrandFortnite } from 'react-icons/tb';
 
 import { FiTruck, FiShield, FiGift, FiX, FiCreditCard } from 'react-icons/fi';
 import ToggleButton from './ToggleButton';
-import TransparentIconVideo from './TransparentIconVideo';
+import TransparentIconFrame from './TransparentIconFrame';
 
 const ProductCard = () => {
   const [miniOpen, setMiniOpen] = useState(false);
@@ -120,8 +120,8 @@ const ProductCard = () => {
               <rect fill="url(#radial-gradient)" strokeWidth={1} strokeMiterlimit={10} stroke="#fff" transform="translate(122 93)" height={1080} width={1920} data-name="Rectangle 83" id="Rectangle_83" />
             </g>
           </svg>
-          {/* Render video with background auto-removed into transparent canvas */}
-          <TransparentIconVideo src="/assets/finance-anim.mp4" size={140} opacity={0.9} />
+          {/* Static transparent icon extracted from video */}
+          <TransparentIconFrame src="/assets/finance-anim.mp4" size={140} tolerance={38} edgeFeather={0.6} />
         </div>
         <label className="favorite">
           <input defaultChecked type="checkbox" />
