@@ -93,6 +93,18 @@ const TransparentIconFrame = ({ src, size = 140, sampleTime = 1.0, tolerance = 2
           ctx.globalAlpha = 1;
         }
 
+        if (silhouette) {
+          // Convert to monochrome to blend better with gray background
+          const mono = ctx.getImageData(0, 0, dim, dim);
+          const md = mono.data;
+          for (let i = 0; i < md.length; i += 4) {
+            const r = md[i], g = md[i+1], b = md[i+2];
+            const lum = Math.max(0, Math.min(255, 0.2126*r + 0.7152*g + 0.0722*b));
+            md[i] = md[i+1] = md[i+2] = lum; // grayscale
+          }
+          ctx.putImageData(mono, 0, 0);
+        }
+
         const url = c.toDataURL("image/png");
         setImgUrl(url);
         cleared = true;
