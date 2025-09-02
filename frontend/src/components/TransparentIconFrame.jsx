@@ -120,6 +120,17 @@ const TransparentIconFrame = ({ src, size = 140, sampleTime = 1.0, tolerance = 2
   }, [src, size, sampleTime, tolerance, edgeFeather]);
 
   if (!imgUrl) return null;
+  if (imgUrl && renderMode === "mask") {
+    // Render as masked emboss so it looks engraved, not overlaid
+    return (
+      <div style={{ position: "absolute", left: "50%", top: "50%", transform: "translate(-50%, -50%)", width: size, height: size, pointerEvents: "none" }}>
+        <img src={imgUrl} alt="icon" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "contain", filter: "brightness(1.12)", mixBlendMode: "luminosity", opacity: 0.85 }} />
+        <img src={imgUrl} alt="icon" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "contain", filter: "blur(0.3px) brightness(0.9)", mixBlendMode: "multiply", opacity: 0.35, transform: "translate(0.6px, 0.6px)" }} />
+        <img src={imgUrl} alt="icon" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "contain", filter: "blur(0.2px)", mixBlendMode: "screen", opacity: 0.45, transform: "translate(-0.6px, -0.6px)" }} />
+      </div>
+    );
+  }
+
 
   return (
     <img src={imgUrl} alt="icon" className={className}
