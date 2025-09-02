@@ -121,7 +121,7 @@ const ProductCard = () => {
             </g>
           </svg>
           {/* Static transparent icon extracted from video; falls back to engrave if not available */}
-          <TransparentIconFrame src="/assets/finance-anim.mp4" size={140} className="icon-image" />
+          <TransparentIconFrame src="/assets/finance-anim.mp4" size={140} className="icon-image" renderMode="mask" />
           <div className="icon-engrave" aria-hidden="true">
             <FiCreditCard className="icon base" size={96} />
             <FiCreditCard className="icon light" size={96} />
