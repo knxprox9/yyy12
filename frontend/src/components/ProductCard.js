@@ -241,24 +241,18 @@ const StyledWrapper = styled.div`
 
   .card .image-container .toggle-wrapper { position: absolute; left: 20px; bottom: -20px; z-index: 4; transform: scale(0.55); transform-origin: left bottom; }
 
-  /* Blended center icon/video */
-  .card .image-container .blend-icon {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%) scale(1.4);
-    width: 140px;
-    height: 140px;
-    object-fit: cover;
-    border-radius: 24px;
-    filter: grayscale(10%) contrast(1.1) brightness(1.05);
-    mix-blend-mode: soft-light; /* دمج ناعم مع الخلفية الرمادية */
-    opacity: 0.9;
-    pointer-events: none;
-  }
+  /* Engraved icon in the gray area (no background, not overlaid looking) */
+  .card .image-container .icon-engrave { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 120px; height: 120px; pointer-events: none; }
+  .card .image-container .icon-engrave .icon { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); }
+  /* Base subtle emboss */
+  .card .image-container .icon-engrave .icon.base { color: rgba(120,120,120,0.22); filter: blur(0.3px); }
+  /* Soft highlight */
+  .card .image-container .icon-engrave .icon.light { color: rgba(255,255,255,0.55); mix-blend-mode: screen; transform: translate(-50%, calc(-50% - 1px)); }
+  /* Soft inner shadow */
+  .card .image-container .icon-engrave .icon.dark { color: rgba(0,0,0,0.15); mix-blend-mode: multiply; filter: blur(0.2px); transform: translate(calc(-50% + 1px), calc(-50% + 1px)); }
 
   @media (max-width: 480px) {
-    .card .image-container .blend-icon { transform: translate(-50%, -50%) scale(1.2); width: 110px; height: 110px; border-radius: 18px; }
+    .card .image-container .icon-engrave { width: 96px; height: 96px; }
   }
 
 
