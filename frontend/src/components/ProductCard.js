@@ -5,6 +5,7 @@ import { TbBrandFortnite } from 'react-icons/tb';
 
 import { FiTruck, FiShield, FiGift, FiX, FiCreditCard } from 'react-icons/fi';
 import ToggleButton from './ToggleButton';
+import TransparentIconVideo from './TransparentIconVideo';
 
 const ProductCard = () => {
   const [miniOpen, setMiniOpen] = useState(false);
@@ -119,11 +120,8 @@ const ProductCard = () => {
               <rect fill="url(#radial-gradient)" strokeWidth={1} strokeMiterlimit={10} stroke="#fff" transform="translate(122 93)" height={1080} width={1920} data-name="Rectangle 83" id="Rectangle_83" />
             </g>
           </svg>
-          <div className="icon-engrave" aria-hidden="true">
-            <FiCreditCard className="icon base" size={96} />
-            <FiCreditCard className="icon light" size={96} />
-            <FiCreditCard className="icon dark" size={96} />
-          </div>
+          {/* Render video with background auto-removed into transparent canvas */}
+          <TransparentIconVideo src="/assets/finance-anim.mp4" size={140} opacity={0.9} />
         </div>
         <label className="favorite">
           <input defaultChecked type="checkbox" />
@@ -240,21 +238,6 @@ const StyledWrapper = styled.div`
   .card .image-container .svg { height: 100%; width: 100%; border-radius: inherit; }
 
   .card .image-container .toggle-wrapper { position: absolute; left: 20px; bottom: -20px; z-index: 4; transform: scale(0.55); transform-origin: left bottom; }
-
-  /* Engraved icon in the gray area (no background, not overlaid looking) */
-  .card .image-container .icon-engrave { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 120px; height: 120px; pointer-events: none; }
-  .card .image-container .icon-engrave .icon { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); }
-  /* Base subtle emboss */
-  .card .image-container .icon-engrave .icon.base { color: rgba(120,120,120,0.22); filter: blur(0.3px); }
-  /* Soft highlight */
-  .card .image-container .icon-engrave .icon.light { color: rgba(255,255,255,0.55); mix-blend-mode: screen; transform: translate(-50%, calc(-50% - 1px)); }
-  /* Soft inner shadow */
-  .card .image-container .icon-engrave .icon.dark { color: rgba(0,0,0,0.15); mix-blend-mode: multiply; filter: blur(0.2px); transform: translate(calc(-50% + 1px), calc(-50% + 1px)); }
-
-  @media (max-width: 480px) {
-    .card .image-container .icon-engrave { width: 96px; height: 96px; }
-  }
-
 
   .card .favorite { position: absolute; width: 14px; height: 14px; top: 8px; left: 8px; cursor: pointer; }
   .card .favorite input { position: absolute; opacity: 0; width: 0; height: 0; }
