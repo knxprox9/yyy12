@@ -17,7 +17,7 @@ const ProductCard = () => {
     <StyledWrapper data-open={miniOpen}>
       <div className="card">
         {/* Full-screen dim background when mini overlay is open */}
-        {miniOpen &amp;&amp; <div className="screen-dim" onClick={() => setMiniOpen(false)} aria-hidden="true" />}
+        {miniOpen && <div className="screen-dim" onClick={() => setMiniOpen(false)} aria-hidden="true" />}
 
         {/* Floating mini page overlay (same size as the card) */}
         {miniOpen &amp;&amp; (
