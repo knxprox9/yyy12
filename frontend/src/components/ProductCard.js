@@ -237,6 +237,27 @@ const StyledWrapper = styled.div`
 
   .card .image-container .toggle-wrapper { position: absolute; left: 20px; bottom: -20px; z-index: 4; transform: scale(0.55); transform-origin: left bottom; }
 
+  /* Blended center icon/video */
+  .card .image-container .blend-icon {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(1.4);
+    width: 140px;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 24px;
+    filter: grayscale(10%) contrast(1.1) brightness(1.05);
+    mix-blend-mode: soft-light; /* دمج ناعم مع الخلفية الرمادية */
+    opacity: 0.9;
+    pointer-events: none;
+  }
+
+  @media (max-width: 480px) {
+    .card .image-container .blend-icon { transform: translate(-50%, -50%) scale(1.2); width: 110px; height: 110px; border-radius: 18px; }
+  }
+
+
   .card .favorite { position: absolute; width: 14px; height: 14px; top: 8px; left: 8px; cursor: pointer; }
   .card .favorite input { position: absolute; opacity: 0; width: 0; height: 0; }
   .card .favorite input:checked ~ svg { animation: circle-bounce 0.3s; fill: #22c55e; filter: drop-shadow(0px 2px 3px rgba(34, 197, 94, 0.4)); }
